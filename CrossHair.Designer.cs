@@ -1,6 +1,6 @@
 ﻿namespace OpenCrosshair
 {
-    partial class OverlayForm
+    partial class CrossHair
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -17,7 +17,7 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OverlayForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrossHair));
             SuspendLayout();
             // 
             // OverlayForm

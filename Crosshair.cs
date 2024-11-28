@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace OpenCrosshair
 {
-    public partial class OverlayForm : Form
+    public partial class CrossHair : Form
     {
         private Color crosshairColor;
         private int thickness;
@@ -15,7 +15,7 @@ namespace OpenCrosshair
 
         private readonly Pen crosshairPen;
 
-        public OverlayForm(Color color, int thickness, int length, int gap, bool showCenterDot, bool showUpperBar)
+        public CrossHair(Color color, int thickness, int length, int gap, bool showCenterDot, bool showUpperBar)
         {
             InitializeComponent();
 

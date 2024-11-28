@@ -48,9 +48,9 @@
             // panelCrosshair
             // 
             panelCrosshair.BackColor = Color.FromArgb(58, 58, 58);
-            panelCrosshair.Location = new Point(21, 11);
+            panelCrosshair.Location = new Point(3, 3);
             panelCrosshair.Name = "panelCrosshair";
-            panelCrosshair.Size = new Size(235, 173);
+            panelCrosshair.Size = new Size(269, 190);
             panelCrosshair.TabIndex = 0;
             panelCrosshair.Paint += panelCrosshair_Paint;
             // 
@@ -84,7 +84,7 @@
             // buttonSetColor
             // 
             buttonSetColor.FlatStyle = FlatStyle.Flat;
-            buttonSetColor.Location = new Point(21, 190);
+            buttonSetColor.Location = new Point(3, 199);
             buttonSetColor.Name = "buttonSetColor";
             buttonSetColor.Size = new Size(89, 52);
             buttonSetColor.TabIndex = 4;
@@ -93,13 +93,13 @@
             // 
             // buttonToggleCrosshair
             // 
-            buttonToggleCrosshair.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonToggleCrosshair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonToggleCrosshair.AutoSize = true;
             buttonToggleCrosshair.FlatStyle = FlatStyle.Flat;
             buttonToggleCrosshair.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonToggleCrosshair.Location = new Point(559, 12);
+            buttonToggleCrosshair.Location = new Point(12, 269);
             buttonToggleCrosshair.Name = "buttonToggleCrosshair";
-            buttonToggleCrosshair.Size = new Size(150, 64);
+            buttonToggleCrosshair.Size = new Size(150, 70);
             buttonToggleCrosshair.TabIndex = 5;
             buttonToggleCrosshair.Text = "Show Crosshair";
             buttonToggleCrosshair.Click += buttonToggleCrosshair_Click;
@@ -118,10 +118,11 @@
             panel1.Controls.Add(trackBarLength);
             panel1.Controls.Add(trackBarThickness);
             panel1.Controls.Add(panelCrosshair);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(12, 9);
             panel1.Name = "panel1";
-            panel1.Size = new Size(541, 256);
+            panel1.Size = new Size(517, 256);
             panel1.TabIndex = 6;
+            panel1.Paint += panel1_Paint;
             // 
             // checkBoxUpperBar
             // 
@@ -152,7 +153,7 @@
             textBox4.BackColor = Color.FromArgb(15, 15, 15);
             textBox4.BorderStyle = BorderStyle.None;
             textBox4.ForeColor = SystemColors.ScrollBar;
-            textBox4.Location = new Point(398, 235);
+            textBox4.Location = new Point(375, 235);
             textBox4.Name = "textBox4";
             textBox4.ReadOnly = true;
             textBox4.Size = new Size(138, 16);
@@ -201,11 +202,11 @@
             // 
             // button1
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button1.AutoSize = true;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(559, 96);
+            button1.Location = new Point(168, 269);
             button1.Name = "button1";
             button1.Size = new Size(150, 32);
             button1.TabIndex = 7;
@@ -214,11 +215,11 @@
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             button2.AutoSize = true;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Nirmala UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(559, 134);
+            button2.Location = new Point(168, 307);
             button2.Name = "button2";
             button2.Size = new Size(150, 32);
             button2.TabIndex = 8;
@@ -232,7 +233,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
             BackgroundImage = Properties.Resources.image;
-            ClientSize = new Size(721, 279);
+            ClientSize = new Size(541, 349);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(buttonToggleCrosshair);

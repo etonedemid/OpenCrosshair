@@ -4,7 +4,6 @@ C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\bin\Release\net8.0-windows\O
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\bin\Release\net8.0-windows\OpenCrosshair.dll
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\bin\Release\net8.0-windows\OpenCrosshair.pdb
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.crosshaircreator.resources
-C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.OverlayForm.resources
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.Properties.Resources.resources
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.csproj.GenerateResource.cache
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.GeneratedMSBuildEditorConfig.editorconfig
@@ -16,3 +15,5 @@ C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\r
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.pdb
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.genruntimeconfig.cache
 C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\ref\OpenCrosshair.dll
+C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.sourcelink.json
+C:\Users\tuxedo\Desktop\OpenCrosshair\OpenCrosshair\obj\Release\net8.0-windows\OpenCrosshair.CrossHair.resources

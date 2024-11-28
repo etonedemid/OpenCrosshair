@@ -8,14 +8,16 @@ namespace OpenCrosshair
     public partial class crosshaircreator : Form
     {
         private Color crosshairColor = Color.Red;
-        private int thickness = 5;
+        private int thickness = 3;
         private int length = 10;
-        private int gap = 1;
+        private int gap = 10;
         private bool showCenterDot = false;
         private bool showUpperBar = true;
 
-        private OverlayForm overlayForm;
+        private CrossHair overlayForm;
 
+
+        
         public crosshaircreator()
         {
             InitializeComponent();
@@ -106,7 +108,7 @@ namespace OpenCrosshair
         {
             if (overlayForm == null || overlayForm.IsDisposed)
             {
-                overlayForm = new OverlayForm(crosshairColor, thickness, length, gap, showCenterDot, showUpperBar)
+                overlayForm = new CrossHair(crosshairColor, thickness, length, gap, showCenterDot, showUpperBar)
                 {
                     TopMost = true
                 };
@@ -128,15 +130,7 @@ namespace OpenCrosshair
             }
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.Control | Keys.Z))
-            {
-                ToggleOverlayForm();
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
+
 
         private void SaveCrosshairSettings()
         {
@@ -251,6 +245,22 @@ namespace OpenCrosshair
             showUpperBar = checkBoxUpperBar.Checked;
             panelCrosshair.Invalidate();
             UpdateOverlayForm();
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.Alt | Keys.Z))
+            {
+                ToggleOverlayForm();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

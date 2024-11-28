@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenCrosshair")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c01e85bd4982e68775194ebfbca3fcd6665ecbda")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a4c2b1920704f4b635356a6c939f57645a3e043")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenCrosshair")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenCrosshair")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
