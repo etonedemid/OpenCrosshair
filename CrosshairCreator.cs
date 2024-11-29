@@ -21,6 +21,13 @@ namespace OpenCrosshair
         public crosshaircreator()
         {
             InitializeComponent();
+            this.DragEnter += new DragEventHandler(Form_DragEnter);
+            this.DragDrop += new DragEventHandler(Form_DragDrop);
+            // Handle form closing to save settings
+            this.FormClosing += (sender, e) => SaveTemporaryCrosshairSettings();
+
+            // Load last crosshair settings
+            LoadTemporaryCrosshairSettings();
         }
 
         private void panelCrosshair_Paint(object sender, PaintEventArgs e)
@@ -262,5 +269,116 @@ namespace OpenCrosshair
         {
 
         }
+        private void Form_DragEnter(object sender, DragEventArgs e)
+{
+    // Check if the dragged data is a file
+    if (e.Data.GetDataPresent(DataFormats.FileDrop))
+    {
+        e.Effect = DragDropEffects.Copy;
+    }
+    else
+    {
+        e.Effect = DragDropEffects.None;
+    }
+}
+
+private void Form_DragDrop(object sender, DragEventArgs e)
+{
+    // Get the dropped files
+    string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+    if (files.Length > 0)
+    {
+        string filePath = files[0];
+        
+        // Load crosshair settings from the file
+        try
+        {
+            string[] values = File.ReadAllText(filePath).Split(',');
+            if (values.Length == 8)
+            {
+                crosshairColor = Color.FromArgb(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]));
+                thickness = int.Parse(values[3]);
+                length = int.Parse(values[4]);
+                gap = int.Parse(values[5]);
+                showCenterDot = bool.Parse(values[6]);
+                showUpperBar = bool.Parse(values[7]);
+
+                UpdateUIComponents();
+                panelCrosshair.Invalidate();
+                UpdateOverlayForm();
+                
+            }
+            else
+            {
+                MessageBox.Show("Invalid file format.", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error loading file: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+    }
+    private void SaveTemporaryCrosshairSettings()
+{
+    try
+    {
+        string tempFilePath = GetTemporaryFilePath();
+        string settings = $"{crosshairColor.R},{crosshairColor.G},{crosshairColor.B},{thickness},{length},{gap},{showCenterDot},{showUpperBar}";
+        File.WriteAllText(tempFilePath, settings);
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error saving temporary settings: {ex.Message}", "Save Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
+private string GetTemporaryFilePath()
+{
+    string tempDir = Path.GetTempPath();
+    return Path.Combine(tempDir, "OpenCrosshair_temp.txt");
+}
+private void LoadTemporaryCrosshairSettings()
+{
+    try
+    {
+        string tempFilePath = GetTemporaryFilePath();
+
+        // Check if the temporary file exists
+        if (File.Exists(tempFilePath))
+        {
+            string[] values = File.ReadAllText(tempFilePath).Split(',');
+
+            // Validate the expected number of values
+            if (values.Length == 8)
+            {
+                // Parse the saved values
+                crosshairColor = Color.FromArgb(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]));
+                thickness = int.Parse(values[3]);
+                length = int.Parse(values[4]);
+                gap = int.Parse(values[5]);
+                showCenterDot = bool.Parse(values[6]);
+                showUpperBar = bool.Parse(values[7]);
+
+                // Update the UI and redraw the crosshair
+                UpdateUIComponents();
+                panelCrosshair.Invalidate();
+                UpdateOverlayForm();
+            }
+            else
+            {
+                MessageBox.Show("Temporary settings file is corrupt or invalid.", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error loading temporary settings: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
+
+
     }
 }

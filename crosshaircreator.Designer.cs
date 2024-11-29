@@ -23,6 +23,8 @@
 
         private void InitializeComponent()
         {
+            AllowDrop = true;
+
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(crosshaircreator));
             panelCrosshair = new Panel();
             trackBarThickness = new TrackBar();
